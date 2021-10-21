@@ -5,3 +5,8 @@
 @import 'global';
 @import '../blocks/header/header.scss';
 @import '../blocks/logo/logo.scss';
+@import '../blocks/btn/btn.scss';
+
+body {
+    font-family: $fontFamily;
+}
