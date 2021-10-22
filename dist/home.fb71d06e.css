@@ -88,13 +88,37 @@ h1 {
 .btn {
   width: 99px;
   height: 44px;
-  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
   border-radius: 22px;
-  border: none;
-  color: #fff;
   font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
+}
+.btn_fullColor {
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  border: none;
+  color: #fff;
+}
+.btn_borderColor {
+  position: relative;
+  background-clip: padding-box;
+  border: solid 2px transparent;
+  color: #BC9CFF;
+}
+.btn_borderColor::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  margin: -2px;
+  border-radius: inherit;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  opacity: 50%;
+}
+.btn_fullColor_opacity {
+  opacity: 50%;
 }
 
 body {
