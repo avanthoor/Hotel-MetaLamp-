@@ -104,15 +104,12 @@ h1 {
   opacity: 50%;
 }
 .btn_borderColor {
-  background-clip: padding-box;
-  display: inline-block;
-  background-color: #fff;
+  border: solid 2px transparent;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  background-origin: border-box;
+  box-shadow: 2px 1000px 1px #fff inset;
   color: #BC9CFF;
 }
-.btn_withoutBorder {
-  border: none;
-}
-
 body {
   font-family: "Montserrat";
 }
