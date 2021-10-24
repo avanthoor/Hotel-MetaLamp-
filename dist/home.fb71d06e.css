@@ -87,29 +87,54 @@ h1 {
 
 .btn {
   display: inline-block;
-  padding: 15px 20px;
+  padding: 13px 18px;
   border-radius: 22px;
   font-size: 12px;
   line-height: 15px;
   font-weight: 700;
   text-transform: uppercase;
   cursor: pointer;
-  border: none;
+  border: 2px solid transparent;
 }
 .btn_fullColor {
   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
   color: #fff;
+  background-origin: border-box;
 }
 .btn_fullColor:hover {
   opacity: 50%;
 }
 .btn_borderColor {
-  border: solid 2px transparent;
+  position: relative;
+  background-clip: padding-box;
+  color: #BC9CFF;
+  background-color: #fff;
+}
+.btn_borderColor::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  margin: -2px;
+  border-radius: inherit;
   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-  background-origin: border-box;
-  box-shadow: 2px 1000px 1px #fff inset;
+}
+.btn_borderColor:hover::before {
+  opacity: 50%;
+}
+.btn_withoutBorder {
+  padding: 0;
+  background-color: #fff;
   color: #BC9CFF;
 }
+.btn_withoutBorder:hover {
+  color: #1F2041;
+  opacity: 0.5;
+}
+
 body {
   font-family: "Montserrat";
 }
