@@ -10,10 +10,10 @@ mixin btn_withoutBorder (title)
   form(active="#")
     button(class="btn btn_withoutBorder")= title
 
-mixin btn_submit  
+mixin btn_submit (title)  
   form(active="#")
     button(class="btn btn_submit")
-      span(class="")
+      span(class="btn__title btn__title_submit")= title
       span(class="material-icons") arrow_forward
 
       

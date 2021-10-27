@@ -1,6 +1,6 @@
  .btn {
     display: inline-block;
-    padding: 13px 18px;
+    padding: 15px 20px;
     border-radius: 22px;
     font-size: 12px;
     line-height: 15px;
@@ -10,6 +10,7 @@
     border: 2px solid transparent;
 
       &_fullColor {
+        border: none;
         background: $btn-color;
         color: #fff;
         background-origin: border-box;
@@ -20,6 +21,7 @@
       
       &_borderColor {
         position: relative;
+        padding: 13px 18px;
         background-clip: padding-box;
         color: #BC9CFF;
         background-color: $body-color;
@@ -51,13 +53,15 @@
       &_submit {
         border: none;
         display: flex;
-        width: 320px;
-        height: 44px;
-        padding: 0;
         background: $btn-color;
         background-clip: padding-box;
         color: #fff;
-        &_
+        align-items: center;
+        width: 320px;
+        height: 44px;
+      }
+      &__title_submit {
+        margin: 0 auto;
       }
 }
 
