@@ -2,6 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin: 125px;
 }
 
 .color-box {
@@ -33,5 +34,9 @@
     &_green {
         background-color: $green;
     }
+}
+
+.text-type__item {
+    margin-bottom: 20px;
 }
 
