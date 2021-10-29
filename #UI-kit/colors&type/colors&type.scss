@@ -1,0 +1,37 @@
+.wrapper-color-n-text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.color-box {
+    width: 70px;
+    height: 70px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    &:last-of-type {
+        margin: 0;
+    }
+    &_dark-shade_opaciy_100 {
+        background-color: $dark-shade_100;
+    }
+    &_dark-shade_opaciy_75 {
+        background-color: $dark-shade_75;
+    }
+    &_dark-shade_opaciy_50 {
+        background-color: $dark-shade_50;
+    }
+    &_dark-shade_opaciy_25 {
+        background-color: $dark-shade_25;
+    }
+    &_dark-shade_opaciy_5 {
+        background-color: $dark-shade_5;
+    }
+    &_purple {
+        background-color: $purple;
+    }
+    &_green {
+        background-color: $green;
+    }
+}
+
