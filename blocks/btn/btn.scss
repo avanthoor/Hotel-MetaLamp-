@@ -51,6 +51,7 @@
       }
 
       &_submit {
+        position: relative;
         border: none;
         display: flex;
         background: $btn-color;
@@ -62,6 +63,15 @@
       }
       &__title_submit {
         margin: 0 auto;
+      }
+      &_arrow {
+        position: absolute;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 44px;
+        height: 44px;
       }
 }
 
