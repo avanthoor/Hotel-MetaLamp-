@@ -20,5 +20,8 @@
   "devDependencies": {
     "pug": "^3.0.2",
     "sass": "^1.43.4"
+  },
+  "dependencies": {
+    "jquery": "^3.6.0"
   }
 }

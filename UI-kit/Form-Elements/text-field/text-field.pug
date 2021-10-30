@@ -1,0 +1,16 @@
+mixin text-field_default
+  form(action="#") 
+    input(class="text-field text-field_default" type="text" placeholder="Email") 
+
+mixin dropdown (title)
+  form(action="#")  
+    div(class="text-field text-field_dropdown")
+      span(class="text-field__title")= title
+      .text-field__expend-icon
+        span(class="material-icons") expand_more
+
+mixin date
+  form(action="#") 
+    input(class="text-field text-field_default" id="date" type="text" placeholder="ДД.ММ.ГГГГ") 
+
+
