@@ -9,8 +9,10 @@ mixin dropdown (title)
       .text-field__expend-icon
         span(class="material-icons") expand_more
 
-mixin date
+mixin masked
   form(action="#") 
-    input(class="text-field text-field_default" id="date" type="text" placeholder="ДД.ММ.ГГГГ") 
+    input(class="text-field text-field_default" id="date" type="text" pattern="/[0-9]/" placeholder="ДД.ММ.ГГГГ") 
+
+
 
 
