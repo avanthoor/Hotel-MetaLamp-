@@ -13,7 +13,7 @@ $.fn.setCursorPosition = function(pos) {
 
   //Добавляем маску с курсором в начале поля ввода
   $.mask.definitions['9'] = "[0-9]";
-  $("#date").click(function(){
+  $(".text-field_masked").click(function(){
     $(this).setCursorPosition(0);
   }).mask("99.99.9999");
  

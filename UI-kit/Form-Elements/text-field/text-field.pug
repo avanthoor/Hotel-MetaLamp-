@@ -1,30 +1,43 @@
 mixin text-field_default
   form(action="#") 
-    input(class="text-field text-field_default text-field_size_l" type="text" placeholder="Email") 
+    .text-field__wrapper
+      input(class="text-field text-field_default text-field_size_l" type="text" placeholder="Email") 
 
-mixin dropdown (title)
-  form(action="#")  
-    div(class="text-field text-field_dropdown")
-      span(class="text-field__title")= title
-      .text-field__expend-icon
-        span(class="material-icons") expand_more
+mixin text-field_dropdown (title)
+  form(action="#") 
+    .text-field__wrapper 
+      div(class="text-field text-field_dropdown")
+        span(class="text-field__title")= title
+        div(class="text-field__icon text-field__icon_expend")
+          span(class="material-icons") expand_more
 
 mixin text-field_masked
   form(action="#") 
-    input(class="text-field text-field_default" id="date" type="text" placeholder="ДД.ММ.ГГГГ") 
+    .text-field__wrapper
+      input(class="text-field text-field_masked text-field_default" type="text" placeholder="ДД.ММ.ГГГГ") 
 
-mixin dropdown_date  
-  form(action="#")  
-    div(class="text-field text-field_dropdown text-field_dropdown_date")
-      span(class="text-field__title") ДД.ММ.ГГГГ
-      .text-field__expend-icon
+mixin text-field_dropdown_date  
+  form(action="#")
+    .text-field__wrapper
+      input(class="text-field text-field_masked text-field_dropdown_date" id="date" type="text" placeholder="ДД.ММ.ГГГГ")
+      span(class="text-field__title") 
+      div(class="text-field__icon text-field__icon_expend")
         span(class="material-icons") expand_more
 
-mixin dropdown_filter-date  
-  form(action="#")  
-    div(class="text-field text-field_dropdown text-field_dropdown_filter-date")
-      span(class="text-field__title") 19 авг - 23 авг
-      .text-field__expend-icon
+mixin text-field_dropdown_filter-date  
+  form(action="#")
+    .text-field__wrapper  
+      div(class="text-field text-field_dropdown text-field_dropdown_filter-date")
+        span(class="text-field__title") 19 авг - 23 авг
+        div(class="text-field__icon text-field__icon_expend")
+          span(class="material-icons") expand_more
+
+mixin text-field_subsription  
+  form(action="#")
+    .text-field__wrapper
+      input(class="text-field text-field_masked text-field_default text-field_subsription" type="text" placeholder="ДД.ММ.ГГГГ")
+      span(class="text-field__title") 
+      div(class="text-field__icon text-field__icon_expend")
         span(class="material-icons") expand_more
 
 
