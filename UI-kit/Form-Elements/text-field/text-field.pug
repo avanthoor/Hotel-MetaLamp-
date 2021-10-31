@@ -1,6 +1,6 @@
 mixin text-field_default
   form(action="#") 
-    input(class="text-field text-field_default" type="text" placeholder="Email") 
+    input(class="text-field text-field_default text-field_size_l" type="text" placeholder="Email") 
 
 mixin dropdown (title)
   form(action="#")  
@@ -9,10 +9,29 @@ mixin dropdown (title)
       .text-field__expend-icon
         span(class="material-icons") expand_more
 
-mixin masked
+mixin text-field_masked
   form(action="#") 
-    input(class="text-field text-field_default" id="date" type="text" pattern="/[0-9]/" placeholder="ДД.ММ.ГГГГ") 
+    input(class="text-field text-field_default" id="date" type="text" placeholder="ДД.ММ.ГГГГ") 
 
+mixin dropdown_date  
+  form(action="#")  
+    div(class="text-field text-field_dropdown text-field_dropdown_date")
+      span(class="text-field__title") ДД.ММ.ГГГГ
+      .text-field__expend-icon
+        span(class="material-icons") expand_more
+
+mixin dropdown_filter-date  
+  form(action="#")  
+    div(class="text-field text-field_dropdown text-field_dropdown_filter-date")
+      span(class="text-field__title") 19 авг - 23 авг
+      .text-field__expend-icon
+        span(class="material-icons") expand_more
+
+
+
+
+      
+       
 
 
 
