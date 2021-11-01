@@ -13,6 +13,20 @@
     height: 44px;
 }
 
+@mixin text-field_icon {
+    text-field__icon {
+        position: absolute;
+            top: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 44px;
+            height: 44px;
+            color: $dark-shade_50;
+    }
+}
+
 @mixin text-field {
     .text-field {
         display: block;
@@ -45,17 +59,20 @@
         &_default::-moz-placeholder {
             color: $dark-shade_25;
         }
-         
     }
 }
 
-@mixin text-field_dropdown {
+@mixin text-field_btn {
     .text-field {
-        &_dropdown {
-            @include text-field_size_l;
+        &_btn {
             display: flex;
             align-items: center;
         }
+    }
+}
+
+@mixin text-field__icon {
+    .text-field {
         &__icon {
             position: absolute;
             top: 0;
@@ -66,9 +83,19 @@
             width: 44px;
             height: 44px;
             color: $dark-shade_50;
+            font-weight: 400;
         }
     }
 }
+
+@mixin text-field_dropdown {
+    .text-field {
+        &_dropdown {
+            @include text-field_size_l;
+        }
+    }
+}
+
 @mixin text-field_dropdown_date {
     .text-field {
         &_dropdown_date {
@@ -93,4 +120,14 @@
     }
 }
 
-//Разобраться со силями icon
+@mixin text-field__icon_arrow-forward {
+    .text-field {
+        &__icon_arrow-forward {
+            background-image: $purple_gradiend;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+}
+
+

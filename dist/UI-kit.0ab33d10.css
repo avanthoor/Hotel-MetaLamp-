@@ -197,6 +197,25 @@ body {
   position: relative;
 }
 
+.text-field__icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  color: rgba(31, 32, 65, 0.5);
+  font-weight: 400;
+}
+
+.text-field__icon_arrow-forward {
+  background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .text-field_default {
   width: 320px;
   height: 44px;
@@ -208,22 +227,14 @@ body {
   color: rgba(31, 32, 65, 0.25);
 }
 
-.text-field_dropdown {
-  width: 320px;
-  height: 44px;
+.text-field_btn {
   display: flex;
   align-items: center;
 }
-.text-field__icon {
-  position: absolute;
-  top: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 44px;
+
+.text-field_dropdown {
+  width: 320px;
   height: 44px;
-  color: rgba(31, 32, 65, 0.5);
 }
 
 .text-field_dropdown_date {

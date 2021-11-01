@@ -1,8 +1,24 @@
 @import 'btn/btn.scss';
 @import 'text-field/text-field.scss';
+
+//TEXT FIELD
+//---------------------------------------------------------
+
+//Стиль блока
+//---------------------------------------------------------
 @include text-field;
-@include text-field-default;
+
+//Стили элементов
+//---------------------------------------------------------
+@include text-field__icon;
+@include text-field__icon_arrow-forward;
+
+//Стили модификаторов
+//---------------------------------------------------------
+@include text-field_default;
+@include text-field_btn;
 @include text-field_dropdown;
 @include text-field_dropdown_date;
 @include text-field_dropdown_filter-date;
 @include text-field_subsription;
+

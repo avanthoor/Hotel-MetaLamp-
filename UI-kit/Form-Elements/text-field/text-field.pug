@@ -6,7 +6,7 @@ mixin text-field_default
 mixin text-field_dropdown (title)
   form(action="#") 
     .text-field__wrapper 
-      div(class="text-field text-field_dropdown")
+      div(class="text-field text-field_btn text-field_dropdown")
         span(class="text-field__title")= title
         div(class="text-field__icon text-field__icon_expend")
           span(class="material-icons") expand_more
@@ -19,7 +19,7 @@ mixin text-field_masked
 mixin text-field_dropdown_date  
   form(action="#")
     .text-field__wrapper
-      input(class="text-field text-field_masked text-field_dropdown_date" id="date" type="text" placeholder="ДД.ММ.ГГГГ")
+      input(class="text-field text-field_masked text-field_btn text-field_dropdown_date" id="date" type="text" placeholder="ДД.ММ.ГГГГ")
       span(class="text-field__title") 
       div(class="text-field__icon text-field__icon_expend")
         span(class="material-icons") expand_more
@@ -27,7 +27,7 @@ mixin text-field_dropdown_date
 mixin text-field_dropdown_filter-date  
   form(action="#")
     .text-field__wrapper  
-      div(class="text-field text-field_dropdown text-field_dropdown_filter-date")
+      div(class="text-field text-field_btn text-field_dropdown_filter-date")
         span(class="text-field__title") 19 авг - 23 авг
         div(class="text-field__icon text-field__icon_expend")
           span(class="material-icons") expand_more
@@ -35,10 +35,10 @@ mixin text-field_dropdown_filter-date
 mixin text-field_subsription  
   form(action="#")
     .text-field__wrapper
-      input(class="text-field text-field_masked text-field_default text-field_subsription" type="text" placeholder="ДД.ММ.ГГГГ")
+      input(class="text-field text-field_default text-field_subsription" type="text" placeholder="Email")
       span(class="text-field__title") 
-      div(class="text-field__icon text-field__icon_expend")
-        span(class="material-icons") expand_more
+      div(class="text-field__icon text-field__icon_arrow-forward")
+        span(class="material-icons") arrow_forward
 
 
 
