@@ -1,0 +1,32 @@
+.text-field {
+    display: block;
+    color: $dark-shade_75;;
+    padding-left: 15px;
+    border-radius: 4px;
+    border: 1px solid $dark-shade_25;
+    &:hover {
+        border: 1px solid $dark-shade_50;
+    }
+    &:focus {
+        outline: none;
+    }
+    &__wrapper {
+        display: inline-block;
+        position: relative;
+    }
+}
+
+.text-field_size_s {
+    width: 150px;
+    height: 44px;
+}
+
+.text-field_size_m {
+    width: 267px;
+    height: 44px;
+}
+
+.text-field_size_l {
+    width: 320px;
+    height: 44px;
+}

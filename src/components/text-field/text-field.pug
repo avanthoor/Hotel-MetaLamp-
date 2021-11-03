@@ -1,0 +1,24 @@
+mixin text-field(options)
+  if !options
+    - options = {}
+
+    - if (options.type === 'text' || options.type === 'date')
+      input.text-field_input(
+        type = options.type 
+        name = options.name 
+        placeholder = options.placeholder 
+      )
+
+  -
+    var classes = ''
+    classes += options.size ? ' text-field_size_' + options.size : ''
+    classes += options.mask ? ' text-field_mask_' + options.mask : ''
+
+  .text-field(
+      class= classes)
+    .text-field__wrapper
+      input.text-field_input(
+        type = options.type 
+        name = options.name 
+        placeholder = options.placeholder 
+      )

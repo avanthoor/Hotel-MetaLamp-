@@ -1,7 +1,7 @@
-mixin text-field_default
+mixin text-field_default ()
   form(action="#") 
     .text-field__wrapper
-      input(class="text-field text-field_default text-field_size_l" type="text" placeholder="Email") 
+      input(class=[text-field text-field_default text-field_size_l] type="text" placeholder="Email") 
 
 mixin text-field_dropdown (title)
   form(action="#") 
