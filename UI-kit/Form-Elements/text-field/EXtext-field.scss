@@ -123,9 +123,9 @@
 @mixin text-field__icon_arrow-forward {
     .text-field {
         &__icon_arrow-forward {
-            background-image: $purple_gradiend;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+          background-image: $purple_gradiend;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
         }
     }
 }

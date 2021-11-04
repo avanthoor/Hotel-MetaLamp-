@@ -1,18 +1,14 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><link rel="stylesheet" href="/UI-kit.0ab33d10.css"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"><script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script><title>Изменить</title><script src="/UI-kit.0ab33d10.js"></script></head><body><div class="container"><div class="text-field  text-field_size_l"><div class="text-field__wrapper"><input class="text-field_input" type="date" placeholder="date"></div></div></div><!-- подключение плагина Masked--><script src="https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.min.js" type="text/javascript"></script><script>//jQuery-плагин для установки курсора в определенной позиции
-$.fn.setCursorPosition = function (pos) {
-  if ($(this).get(0).setSelectionRange) {
-    $(this).get(0).setSelectionRange(pos, pos);
-  } else if ($(this).get(0).createTextRange) {
-    var range = $(this).get(0).createTextRange();
-    range.collapse(true);
-    range.moveEnd('character', pos);
-    range.moveStart('character', pos);
-    range.select();
-  }
-}; //Добавляем маску с курсором в начале поля ввода
-
-
-$.mask.definitions['9'] = "[0-9]";
-$(".text-field_masked").click(function () {
-  $(this).setCursorPosition(0);
-}).mask("99.99.9999");</script></body></html>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><link rel="stylesheet" href="/UI-kit.0ab33d10.css"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"><script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script><title>Изменить</title><script src="/UI-kit.0ab33d10.js"></script></head><body><div class="container"><form action="#"><div class="text-field"><input class="text-field__input  text-field_size_l" type="email" placeholder="Email"></div></form><!--  - if (options.In==inputType === 'text' || options.inputType === 'email')input.text-field_input(
+  type = options.inputType 
+  placeholder = options.placeholder 
+)--><form action="#"><div class="text-field"><input class="text-field__input  text-field_size_l" readonly="readonly" value="Сколько гостей"></div></form><!--  - if (options.In==inputType === 'text' || options.inputType === 'email')input.text-field_input(
+  type = options.inputType 
+  placeholder = options.placeholder 
+)--><form action="#"><div class="text-field"><input class="text-field__input  text-field_size_l text-field_mask_on" type="text" placeholder="ДД.ММ.ГГГГ"></div></form><!--  - if (options.In==inputType === 'text' || options.inputType === 'email')input.text-field_input(
+  type = options.inputType 
+  placeholder = options.placeholder 
+)--><form action="#"><div class="text-field"><input class="text-field__input  text-field_size_m" type="email" placeholder="Email"><div class="text-field__icon text-field__icon_subsrciption"><span class="material-icons">arrow_forward</span></div></div></form><!--  - if (options.In==inputType === 'text' || options.inputType === 'email')input.text-field_input(
+  type = options.inputType 
+  placeholder = options.placeholder 
+)--></div><!-- подключение плагина Masked--><script src="https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.min.js" type="text/javascript"></script>
+<script src="/mask.c7ed2383.js" type="text/javascript"></script></body></html>
