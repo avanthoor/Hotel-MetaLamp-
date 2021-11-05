@@ -1,0 +1,32 @@
+include ../../material-icons/material-icons.pug
+
+mixin text-field__dropdown (options)
+
+  //Записываем в const массивы с item'ами для dropdown 
+  - const guests = ['взрослые', 'дети', 'младенцы']
+  - const comfort = ['спальни', 'кровати', 'ванные комнаты']
+
+  //Для простоты и наглядности записываем доступ к значению вложенного объекта в объект 'options'
+  - const dropdown = options.dropdown.item
+  //И задаём условие, что если заданно значени 'values', то записываем его в const, иначе - массив с нулями
+  - const values = options.dropdown.values || [0, 0, 0]
+
+  //Выбор набора item'ов в зависимости от значения ключа 'item' в объекте 'dropdown'
+  - const items = (dropdown === 'guests') ? guests : comfort
+
+  label.text-field__icon.text-field__icon_dropdown
+    +material-icons('expand_more')
+  .text-field__dropdown-expander(id='expander') 
+    //Для каждого значения в массиве item'ов, а также для каждого значения value создаётся свой expander-list
+    each item, value in items 
+      .text-field__expander-list
+        .text-field__expander-item #{item}
+        .text-field__expander-selectors 
+          .text-field__expander-btn.text-field__expander-btn_dec -
+          .text-field__expander-value #{values[value]}
+          .text-field__expander-btn.text-field__expander-btn_inc +
+
+    
+          
+        
+          
