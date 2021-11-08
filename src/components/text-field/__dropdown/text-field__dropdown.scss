@@ -3,6 +3,7 @@
     border-radius: 0 0 4px 4px;
     border: 1px solid $dark-shade_50;
     border-top: none;
+    display: none;
   } 
   
   &__expander-list {
@@ -41,4 +42,5 @@
     font-size: 12px;
     font-weight: 700;
   }
+
 }

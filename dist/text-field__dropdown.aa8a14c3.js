@@ -118,11 +118,19 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"src/components/text-field/__dropdown/text-field__dropdown.js":[function(require,module,exports) {
-$(document).ready(function () {
-  $('.text-field').click(function () {
+//Добавление модификатора родительскому классу при клике по нему
+var childClass = document.querySelector('.text-field_type_dropdown');
+
+childClass.onclick = function () {
+  childClass.classList.toggle('text-field_type_dropdown');
+};
+/*$(document).ready(function() {
+  $('.text-field_type_dropdown').click(function () {
     $('#expander').toggle();
-  });
-});
+  })
+})
+*/
+//Разбраться с модификаторами
 },{}],"../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -151,7 +159,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56745" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51009" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -13,16 +13,21 @@ mixin text-field(options)
 
   // Добавление модификаторов при установлении их значений
   -
-    var classes = ''
-    classes += options.size ? ' text-field_size_' + options.size : ''
-    classes += (options.mask === 'on') ? ' text-field_mask_' + options.mask : ''
-    classes += (options.type === 'dropdown') ? ' text-field_type_dropdown': ''
+    var childClasses = ''
+    childClasses += options.size ? ' text-field_size_' + options.size : ''
+    childClasses += (options.mask === 'on') ? ' text-field_mask_' + options.mask : ''
+    childClasses += (options.type === 'dropdown') ? ' text-field_input-type_dropdown': ''
   
+  -
+    var parentClasses = ''
+    parentClasses += (options.type === 'dropdown') ? ' text-field_type_dropdown': ''
     
   form(action="#")
-    .text-field(id='dropdown')
+    .text-field(
+      class= parentClasses
+    )
       input.text-field__input(
-        class=       classes
+        class=       childClasses
         type=        options.inputType 
         placeholder= options.placeholder 
         readonly=    readonly 
