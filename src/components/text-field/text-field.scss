@@ -63,8 +63,14 @@
 
   }
 
-  &_type_dropdown {
+  // С помощью ' > * ' свойства применяются к дочерним элементам
+  &_type_dropdown > * {
+    cursor: pointer;
+  }
+
+  &_input-type_dropdown_expanded {
     border-radius: 4px 4px 0 0;
+    
   }
 }
 

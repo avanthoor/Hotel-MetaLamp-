@@ -6,6 +6,10 @@
     display: none;
   } 
   
+  &__dropdown-expander_show {
+    display: block;
+  } 
+  
   &__expander-list {
     display: flex;
     justify-content: space-between;

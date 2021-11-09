@@ -109,6 +109,9 @@ body {
   border-top: none;
   display: none;
 }
+.text-field__dropdown-expander_show {
+  display: block;
+}
 .text-field__expander-list {
   display: flex;
   justify-content: space-between;
@@ -195,7 +198,10 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.text-field_type_dropdown {
+.text-field_type_dropdown > * {
+  cursor: pointer;
+}
+.text-field_input-type_dropdown_expanded {
   border-radius: 4px 4px 0 0;
 }
 

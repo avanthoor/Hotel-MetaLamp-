@@ -1,15 +1,16 @@
 //Добавление модификатора родительскому классу при клике по нему
-let childClass = document.querySelector('.text-field_type_dropdown');
+let parentClass = document.querySelector('.text-field_type_dropdown');
+let childClass = document.querySelector('.text-field_input-type_dropdown');
+let expander = document.querySelector('.text-field__dropdown-expander');
+parentClass.onclick = function() {
+  childClass.classList.toggle('text-field_input-type_dropdown_expanded');
 
-childClass.onclick = function() {
-  childClass.classList.toggle('text-field_type_dropdown');
 };
 
-/*$(document).ready(function() {
-  $('.text-field_type_dropdown').click(function () {
-    $('#expander').toggle();
+$(document).ready(function() {
+  $(parentClass).on('click', function () {
+    $(expander).show()
   })
 })
-*/
 
-//Разбраться с модификаторами
+
