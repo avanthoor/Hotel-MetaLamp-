@@ -118,18 +118,21 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"src/components/text-field/__dropdown/text-field__dropdown.js":[function(require,module,exports) {
-//Добавление модификатора родительскому классу при клике по нему
-var parentClass = document.querySelector('.text-field_type_dropdown');
-var childClass = document.querySelector('.text-field_input-type_dropdown');
-var expander = document.querySelector('.text-field__dropdown-expander');
-
-parentClass.onclick = function () {
-  childClass.classList.toggle('text-field_input-type_dropdown_expanded');
-};
-
 $(document).ready(function () {
-  $(parentClass).on('click', function () {
-    $(expander).show();
+  var parentClass = $('.text-field_type_dropdown');
+  var childClass = $('.text-field_input-type_dropdown');
+  var expander = $('.text-field__dropdown-expander');
+  $(parentClass).click(function () {
+    $(childClass).toggleClass('text-field_input-type_dropdown_expanded'); //Добавляет/убирает класс при клике
+
+    $(expander).show(); //показывает expander при клике
+  });
+  $(document).mouseup(function (e) {
+    if (!expander.is(e.target) //если клик был не по expander
+    && expander.has(e.target).length == 0) {
+      //и не по его дочерним элм
+      expander.hide();
+    }
   });
 });
 },{}],"../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -160,7 +163,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54370" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61385" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
