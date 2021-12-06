@@ -1,20 +1,16 @@
-$(document).ready(function() {
-  let parentClass = $('.text-field_type_dropdown');
-  let childClass = $('.text-field_input-type_dropdown');
-  let expander = $('.text-field__dropdown-expander');
+//Добавление модификатора родительскому классу при клике по нему
+let parentClass = document.querySelector('.text-field_type_dropdown');
+let childClass = document.querySelector('.text-field_input-type_dropdown');
+let expander = document.querySelector('.text-field__dropdown-expander');
+parentClass.onclick = function() {
+  childClass.classList.toggle('text-field_input-type_dropdown_expanded');
 
-  $(parentClass).click(function () {
-    $(childClass).toggleClass('text-field_input-type_dropdown_expanded'); //Добавляет/убирает класс при клике
-    $(expander).show(); //показывает expander при клике
+};
+
+$(document).ready(function() {
+  $(parentClass).on('click', function () {
+    $(expander).show()
   })
-  
-  $(document).mouseup(function (e) {
-    if (!expander.is(e.target) //если клик был не по expander
-      && expander.has(e.target).length == 0) { //и не по его дочерним элм
-        expander.hide ();
-      }
-  })
-  
 })
 
 
