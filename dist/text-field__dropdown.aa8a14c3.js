@@ -118,19 +118,17 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"src/components/text-field/__dropdown/text-field__dropdown.js":[function(require,module,exports) {
-//Добавление модификатора родительскому классу при клике по нему
-var parentClass = document.querySelector('.text-field_type_dropdown');
-var childClass = document.querySelector('.text-field_input-type_dropdown');
+var dropdown = document.querySelector('.text-field_type_dropdown');
 var expander = document.querySelector('.text-field__dropdown-expander');
-
-parentClass.onclick = function () {
-  childClass.classList.toggle('text-field_input-type_dropdown_expanded');
-};
-
-$(document).ready(function () {
-  $(parentClass).on('click', function () {
-    $(expander).show();
-  });
+var input = document.querySelector('.text-field_input-type_dropdown');
+document.addEventListener('click', function (e) {
+  if (e.target.closest('.text-field_type_dropdown') && !e.target.closest('.text-field__dropdown-expander')) {
+    expander.classList.toggle('text-field__dropdown-expander_show');
+    input.classList.toggle('text-field_input-type_dropdown_expanded');
+  } else if (input.classList.contains('text-field_input-type_dropdown_expanded') && !e.target.closest('.text-field__dropdown-expander')) {
+    expander.classList.remove('text-field__dropdown-expander_show');
+    input.classList.remove('text-field_input-type_dropdown_expanded');
+  }
 });
 },{}],"../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -160,7 +158,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54370" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64835" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
