@@ -1,21 +1,16 @@
-mixin btn_fullColor (title) 
-  form(active="#")
-    button(class="btn btn_fullColor")= title
+mixin btn (options)
+  if !options
+    - options = {}
 
-mixin btn_borderColor (title) 
-  form(active="#")
-    button(class="btn btn_borderColor")= title
+  -
+    var classes = ''
+    classes += (options.type === 'color-full') ? ' btn_color-full' : ''
+    classes += (options.type === 'color-only-border') ? ' btn_color-only-border' : ''
+    classes += (options.type === 'without-border') ? ' btn_without-border' : ''
 
-mixin btn_withoutBorder (title) 
-  form(active="#")
-    button(class="btn btn_withoutBorder")= title
-
-mixin btn_submit (title)  
-  form(active="#")
-    button(class="btn btn_submit")
-      span(class="btn__title btn__title_submit")= title
-      .btn_arrow
-        span(class="material-icons") arrow_forward
+  button.btn(
+    class= classes 
+  )= options.title
 
       
 
