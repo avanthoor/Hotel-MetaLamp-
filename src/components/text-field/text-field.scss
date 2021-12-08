@@ -44,7 +44,7 @@
     }
   }
 
-  &__icon {
+  &__icon-wrapper {
     position: absolute;
     top: 0;
     right: 0;
@@ -56,11 +56,11 @@
     color: $dark-shade_50;
     font-weight: 400;
 
-    &_subsrciption {
-      background-image: $purple_gradiend;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+  &_subsrciption {
+    background-image: $purple_gradiend;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 
   }
 

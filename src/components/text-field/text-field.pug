@@ -1,5 +1,5 @@
 include __subscription/text-field__subscription.pug
-include __dropdown/text-field__dropdown.pug
+include __expander/text-field__expander.pug
 
 mixin text-field(options)
   if !options
@@ -37,11 +37,6 @@ mixin text-field(options)
         when 'subscription'
           +text-field__subscription
         when 'dropdown'
-          +text-field__dropdown(options)
+          +text-field__expander(options)
 
 
-  //  - if (options.In==inputType === 'text' || options.inputType === 'email')
-      input.text-field_input(
-        type = options.inputType 
-        placeholder = options.placeholder 
-      )

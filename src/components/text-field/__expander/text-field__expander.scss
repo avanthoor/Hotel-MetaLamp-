@@ -2,14 +2,14 @@
 @import '../../../theme/global.scss';
 
 .text-field {
-  &__dropdown-expander {
+  &__expander {
     border-radius: 0 0 4px 4px;
     border: 1px solid $dark-shade_50;
     border-top: none;
     display: none;
   } 
   
-  &__dropdown-expander_show {
+  &__expander_show {
     display: block;
   } 
   
@@ -18,6 +18,10 @@
     justify-content: space-between;
     align-items: center;
     padding: 7px 7px 0px 15px;
+
+    &:last-child {
+      padding-bottom: 8px;
+    }
   }
   
   &__expander-item {
@@ -33,7 +37,7 @@
     width: 92px;
   }
 
-  &__expander-btn {
+  &__expander-selector-btn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -50,4 +54,9 @@
     font-weight: 700;
   }
 
+  &__expander-controllers {
+    display: flex;
+    justify-content: space-between;
+    padding: 19px 7px 13px 15px;
+  }
 }

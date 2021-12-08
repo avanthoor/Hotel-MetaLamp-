@@ -199,7 +199,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../../../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../components/text-field/__dropdown/text-field__dropdown.scss":[function(require,module,exports) {
+},{"_css_loader":"../../../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../components/text-field/__expander/text-field__expander.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
@@ -228,16 +228,16 @@ $.mask.definitions['9'] = "[0-9]";
 $(".text-field_mask_on").click(function () {
   $(this).setCursorPosition(0);
 }).mask("99.99.9999");
-},{}],"../components/text-field/__dropdown/text-field__dropdown.js":[function(require,module,exports) {
+},{}],"../components/text-field/__expander/text-field__expander.js":[function(require,module,exports) {
 var dropdown = document.querySelector('.text-field_type_dropdown');
-var expander = document.querySelector('.text-field__dropdown-expander');
+var expander = document.querySelector('.text-field__expander');
 var input = document.querySelector('.text-field_input-type_dropdown');
 document.addEventListener('click', function (e) {
-  if (e.target.closest('.text-field_type_dropdown') && !e.target.closest('.text-field__dropdown-expander')) {
-    expander.classList.toggle('text-field__dropdown-expander_show');
+  if (e.target.closest('.text-field_type_dropdown') && !e.target.closest('.text-field__expander')) {
+    expander.classList.toggle('text-field__expander_show');
     input.classList.toggle('text-field_input-type_dropdown_expanded');
-  } else if (input.classList.contains('text-field_input-type_dropdown_expanded') && !e.target.closest('.text-field__dropdown-expander')) {
-    expander.classList.remove('text-field__dropdown-expander_show');
+  } else if (input.classList.contains('text-field_input-type_dropdown_expanded') && !e.target.closest('.text-field__expander')) {
+    expander.classList.remove('text-field__expander_show');
     input.classList.remove('text-field_input-type_dropdown_expanded');
   }
 });
@@ -250,14 +250,14 @@ require("./theme/vars.scss");
 
 require("./components/text-field/text-field.scss");
 
-require("./components/text-field/__dropdown/text-field__dropdown.scss");
+require("./components/text-field/__expander/text-field__expander.scss");
 
 require("./components/btn/btn.scss");
 
 require("./components/text-field/mask.js");
 
-require("./components/text-field/__dropdown/text-field__dropdown.js");
-},{"./theme/global.scss":"../theme/global.scss","./theme/vars.scss":"../theme/vars.scss","./components/text-field/text-field.scss":"../components/text-field/text-field.scss","./components/text-field/__dropdown/text-field__dropdown.scss":"../components/text-field/__dropdown/text-field__dropdown.scss","./components/btn/btn.scss":"../components/btn/btn.scss","./components/text-field/mask.js":"../components/text-field/mask.js","./components/text-field/__dropdown/text-field__dropdown.js":"../components/text-field/__dropdown/text-field__dropdown.js"}],"../../../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+require("./components/text-field/__expander/text-field__expander.js");
+},{"./theme/global.scss":"../theme/global.scss","./theme/vars.scss":"../theme/vars.scss","./components/text-field/text-field.scss":"../components/text-field/text-field.scss","./components/text-field/__expander/text-field__expander.scss":"../components/text-field/__expander/text-field__expander.scss","./components/btn/btn.scss":"../components/btn/btn.scss","./components/text-field/mask.js":"../components/text-field/mask.js","./components/text-field/__expander/text-field__expander.js":"../components/text-field/__expander/text-field__expander.js"}],"../../../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -285,7 +285,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56822" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51015" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

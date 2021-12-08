@@ -243,7 +243,7 @@ select {
 .text-field__input::-moz-placeholder {
   color: rgba(31, 32, 65, 0.25);
 }
-.text-field__icon {
+.text-field__icon-wrapper {
   position: absolute;
   top: 0;
   right: 0;
@@ -255,7 +255,7 @@ select {
   color: rgba(31, 32, 65, 0.5);
   font-weight: 400;
 }
-.text-field__icon_subsrciption {
+.text-field__icon-wrapper_subsrciption {
   background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -371,13 +371,13 @@ select {
   font: inherit;
 }
 
-.text-field__dropdown-expander {
+.text-field__expander {
   border-radius: 0 0 4px 4px;
   border: 1px solid rgba(31, 32, 65, 0.5);
   border-top: none;
   display: none;
 }
-.text-field__dropdown-expander_show {
+.text-field__expander_show {
   display: block;
 }
 .text-field__expander-list {
@@ -385,6 +385,9 @@ select {
   justify-content: space-between;
   align-items: center;
   padding: 7px 7px 0px 15px;
+}
+.text-field__expander-list:last-child {
+  padding-bottom: 8px;
 }
 .text-field__expander-item {
   text-transform: uppercase;
@@ -397,7 +400,7 @@ select {
   align-items: center;
   width: 92px;
 }
-.text-field__expander-btn {
+.text-field__expander-selector-btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -411,6 +414,11 @@ select {
 .text-field__expander-value {
   font-size: 12px;
   font-weight: 700;
+}
+.text-field__expander-controllers {
+  display: flex;
+  justify-content: space-between;
+  padding: 19px 7px 13px 15px;
 }
 @import url("https://fonts.googleapis.com/css?family=Montserrat:regular,700&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Quicksand:700&display=swap");
@@ -572,16 +580,24 @@ select {
 .btn_submit {
   position: relative;
   border: none;
-  display: flex;
   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
   background-clip: padding-box;
   color: #fff;
-  align-items: center;
   width: 320px;
   height: 44px;
+  text-align: center;
 }
-.btn__title_submit {
-  margin: 0 auto;
+.btn__icon-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  color: #fff;
+  font-weight: 400;
 }
 
 /*# sourceMappingURL=/src.80dfb952.css.map */

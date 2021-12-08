@@ -1,3 +1,5 @@
+include ../material-icons/material-icons.pug
+
 mixin btn (options)
   if !options
     - options = {}
@@ -7,10 +9,15 @@ mixin btn (options)
     classes += (options.type === 'color-full') ? ' btn_color-full' : ''
     classes += (options.type === 'color-only-border') ? ' btn_color-only-border' : ''
     classes += (options.type === 'without-border') ? ' btn_without-border' : ''
+    classes += (options.type === 'submit') ? ' btn_submit' : ''
 
   button.btn(
     class= classes 
   )= options.title
+    case options.type
+      when 'submit'
+        .btn__icon-wrapper
+          +material-icons('arrow_forward')
 
       
 
