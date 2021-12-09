@@ -1,7 +1,14 @@
-const dropdown = document.querySelector('.text-field_type_dropdown');
-const expander = document.querySelector('.text-field__expander')
-const input = document.querySelector('.text-field_input-type_dropdown')
+const input = document.querySelector('.text-field_input-type_dropdown');
+const expander = document.querySelector('.text-field__expander');
 
+const dec = document.querySelectorAll('.text-field__expander-selector-btn_dec');
+const inc = document.querySelectorAll('.text-field__expander-selector-btn_inc');
+const value = document.querySelectorAll('.text-field__expander-value')
+
+const cancel = document.querySelector('#cancel');
+const apply = document.querySelector('#apply');
+
+// Реализуем дропдаун
 document.addEventListener('click', (e) => {
   if ( (e.target.closest('.text-field_type_dropdown')) 
   && (!e.target.closest('.text-field__expander')) ) {
@@ -13,3 +20,44 @@ document.addEventListener('click', (e) => {
       input.classList.remove('text-field_input-type_dropdown_expanded');
   }
 })
+
+// Реализуем селекторы
+expander.addEventListener('click', (e) => {
+  let index;
+
+  inc.forEach((el, i) => { 
+    if (e.target === el) {
+      index = i;
+    }
+  })
+
+  dec.forEach((el, i) => { 
+    if (e.target === el) {
+      index = i;
+    }
+  })
+
+  switch (e.target) {
+    case inc[index]:
+      value[index].textContent++;
+      break;
+    case dec[index]:
+      if (value[index].textContent > 0) {
+        value[index].textContent--;
+      }
+      break;
+
+    case cancel:
+      for (el of value) {
+        el.textContent = 0;
+      }
+  }
+})
+
+
+
+
+
+
+
+

@@ -13,6 +13,7 @@ mixin btn (options)
 
   button.btn(
     class= classes 
+    id= options.id
   )= options.title
     case options.type
       when 'submit'

@@ -32,11 +32,14 @@ mixin text-field__expander (options)
         .text-field__expander-controllers
           +btn({
             type: 'without-border',
-            title: 'очистить'
-          })
+            title: 'очистить',
+            id: 'cancel'
+          }
+          )
           +btn({
             type: 'without-border',
-            title: 'применить'
+            title: 'применить',
+            id: 'apply'
           })
 
 

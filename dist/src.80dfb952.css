@@ -265,6 +265,7 @@ select {
 }
 .text-field_input-type_dropdown_expanded {
   border-radius: 4px 4px 0 0;
+  border: 1px solid rgba(31, 32, 65, 0.5);
 }
 @import url("https://fonts.googleapis.com/css?family=Montserrat:regular,700&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Quicksand:700&display=swap");
@@ -376,6 +377,7 @@ select {
   border: 1px solid rgba(31, 32, 65, 0.5);
   border-top: none;
   display: none;
+  cursor: default;
 }
 .text-field__expander_show {
   display: block;
