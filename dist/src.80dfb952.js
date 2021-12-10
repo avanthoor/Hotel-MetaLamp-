@@ -251,7 +251,38 @@ document.addEventListener('click', function (e) {
     expander.classList.remove('text-field__expander_show');
     input.classList.remove('text-field_input-type_dropdown_expanded');
   }
-}); // Реализуем селекторы
+}); // Реализуем функцию устанавливки по умолчанию opacity для dec
+
+var decDisabled = function decDisabled() {
+  var _iterator = _createForOfIteratorHelper(dec),
+      _step;
+
+  try {
+    for (_iterator.s(); !(_step = _iterator.n()).done;) {
+      var _el = _step.value;
+
+      _el.classList.add('text-field__expander-selector-btn_dec_disabled');
+    }
+  } catch (err) {
+    _iterator.e(err);
+  } finally {
+    _iterator.f();
+  }
+
+  cancel.style.visibility = 'hidden';
+};
+
+decDisabled();
+
+var checkValue = function checkValue(index) {
+  if (+value[index].textContent > 0) {
+    dec[index].classList.remove('text-field__expander-selector-btn_dec_disabled');
+    cancel.style.visibility = 'visible';
+  } else if (+value[index].textContent === 0) {
+    dec[index].classList.add('text-field__expander-selector-btn_dec_disabled');
+    cancel.style.visibility = 'hidden';
+  }
+};
 
 expander.addEventListener('click', function (e) {
   var index;
@@ -269,30 +300,33 @@ expander.addEventListener('click', function (e) {
   switch (e.target) {
     case inc[index]:
       value[index].textContent++;
+      checkValue(index);
       break;
 
     case dec[index]:
       if (value[index].textContent > 0) {
         value[index].textContent--;
+        checkValue(index);
       }
 
       break;
 
     case cancel:
-      var _iterator = _createForOfIteratorHelper(value),
-          _step;
+      var _iterator2 = _createForOfIteratorHelper(value),
+          _step2;
 
       try {
-        for (_iterator.s(); !(_step = _iterator.n()).done;) {
-          el = _step.value;
+        for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+          el = _step2.value;
           el.textContent = 0;
         }
       } catch (err) {
-        _iterator.e(err);
+        _iterator2.e(err);
       } finally {
-        _iterator.f();
+        _iterator2.f();
       }
 
+      decDisabled();
   }
 });
 },{}],"../index.js":[function(require,module,exports) {
@@ -339,7 +373,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54068" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50427" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

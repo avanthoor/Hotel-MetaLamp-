@@ -23,5 +23,8 @@
     "parcel-plugin-nuke-dist": "^1.0.1",
     "pug": "^3.0.2",
     "sass": "^1.44.0"
+  },
+  "dependencies": {
+    "floss-js": "^1.0.0"
   }
 }

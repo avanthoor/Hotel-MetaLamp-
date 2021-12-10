@@ -413,6 +413,9 @@ select {
   color: rgba(31, 32, 65, 0.5);
   cursor: pointer;
 }
+.text-field__expander-selector-btn_dec_disabled {
+  opacity: 0.38;
+}
 .text-field__expander-value {
   font-size: 12px;
   font-weight: 700;

@@ -21,7 +21,26 @@ document.addEventListener('click', (e) => {
   }
 })
 
-// Реализуем селекторы
+// Реализуем функцию устанавливки по умолчанию opacity для dec
+const decDisabled = () => {
+  for (let el of dec) {
+    el.classList.add('text-field__expander-selector-btn_dec_disabled')
+  }
+  cancel.style.visibility = 'hidden';
+}
+
+decDisabled();
+
+const checkValue = (index) => {
+  if (+value[index].textContent > 0) {
+    dec[index].classList.remove('text-field__expander-selector-btn_dec_disabled');
+    cancel.style.visibility = 'visible';
+  } else if (+value[index].textContent === 0) {
+    dec[index].classList.add('text-field__expander-selector-btn_dec_disabled');
+    cancel.style.visibility = 'hidden';
+  }
+}
+
 expander.addEventListener('click', (e) => {
   let index;
 
@@ -40,24 +59,20 @@ expander.addEventListener('click', (e) => {
   switch (e.target) {
     case inc[index]:
       value[index].textContent++;
+      checkValue(index);
       break;
     case dec[index]:
       if (value[index].textContent > 0) {
         value[index].textContent--;
-      }
+        checkValue(index);
+      } 
       break;
 
     case cancel:
       for (el of value) {
         el.textContent = 0;
       }
+      decDisabled();
   }
 })
-
-
-
-
-
-
-
-
+ 

@@ -48,6 +48,9 @@
     border-radius: 50%;
     color: $dark-shade_50;
     cursor: pointer;
+      &_dec_disabled {
+        opacity: 0.38;
+      }
   }
 
   &__expander-value {
