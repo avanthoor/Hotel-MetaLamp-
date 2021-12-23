@@ -240,8 +240,11 @@ var expander = document.querySelector('.text-field__expander');
 var dec = document.querySelectorAll('.text-field__expander-selector-btn_dec');
 var inc = document.querySelectorAll('.text-field__expander-selector-btn_inc');
 var value = document.querySelectorAll('.text-field__expander-value');
-var cancel = document.querySelector('#cancel');
-var apply = document.querySelector('#apply'); // Реализуем дропдаун
+var controllers = document.querySelector('#controllers');
+var clear = document.querySelector('#clear');
+var apply = document.querySelector('#apply');
+var inputGuests = document.querySelector('#guests');
+var inputComfort = document.querySelector('#comfort'); // Реализуем дропдаун
 
 document.addEventListener('click', function (e) {
   if (e.target.closest('.text-field_type_dropdown') && !e.target.closest('.text-field__expander')) {
@@ -268,22 +271,57 @@ var decDisabled = function decDisabled() {
   } finally {
     _iterator.f();
   }
-
-  cancel.style.visibility = 'hidden';
 };
 
-decDisabled();
-
-var checkValue = function checkValue(index) {
+var checkValue = function checkValue(index, valueArr) {
   if (+value[index].textContent > 0) {
     dec[index].classList.remove('text-field__expander-selector-btn_dec_disabled');
-    cancel.style.visibility = 'visible';
+
+    if (controllers) {
+      clear.style.visibility = 'visible';
+    }
   } else if (+value[index].textContent === 0) {
     dec[index].classList.add('text-field__expander-selector-btn_dec_disabled');
-    cancel.style.visibility = 'hidden';
+
+    if (controllers) {
+      var sumEl = 0;
+
+      var _iterator2 = _createForOfIteratorHelper(valueArr),
+          _step2;
+
+      try {
+        for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+          var _el2 = _step2.value;
+          sumEl += +_el2;
+        }
+      } catch (err) {
+        _iterator2.e(err);
+      } finally {
+        _iterator2.f();
+      }
+
+      if (sumEl === 0) {
+        clear.style.visibility = 'hidden';
+      }
+    }
   }
+}; //Функция определения склонения слова
+
+
+var numWord = function numWord(value, words) {
+  value = Math.abs(value) % 100;
+  var num = value % 10;
+  if (value > 10 && value < 20) return words[2];
+  if (num > 1 && num < 5) return words[1];
+  if (num == 1) return words[0];
+  return words[2];
 };
 
+var withoutControllers = function withoutControllers(values) {
+  inputComfort.value = "".concat(values[0], " ").concat(numWord(values[0], ['спальня', 'спальни', 'спален'])) + (values[1] > 0 ? ", ".concat(values[1], " ").concat(numWord(values[1], ['кровать', 'кровати', 'кроватей'])) : ', 0 кроватей') + (values[2] > 0 ? ", ".concat(values[2], " \u0432\u0430\u043D\u043D...") : ', 0 ванн...');
+};
+
+var currentValue = [];
 expander.addEventListener('click', function (e) {
   var index;
   inc.forEach(function (el, i) {
@@ -300,35 +338,59 @@ expander.addEventListener('click', function (e) {
   switch (e.target) {
     case inc[index]:
       value[index].textContent++;
-      checkValue(index);
+      currentValue[index] = value[index].textContent;
+      checkValue(index, currentValue);
+
+      if (!controllers) {
+        withoutControllers(currentValue);
+      }
+
       break;
 
     case dec[index]:
       if (value[index].textContent > 0) {
         value[index].textContent--;
-        checkValue(index);
+        currentValue[index] = value[index].textContent;
+        checkValue(index, currentValue);
+
+        if (!controllers) {
+          withoutControllers(currentValue);
+        }
       }
 
-      break;
+  }
+});
+decDisabled(); //Случай, если есть контроллеры
 
-    case cancel:
-      var _iterator2 = _createForOfIteratorHelper(value),
-          _step2;
+if (controllers) {
+  clear.style.visibility = 'hidden';
+  controllers.addEventListener('click', function (e) {
+    if (e.target === clear) {
+      var _iterator3 = _createForOfIteratorHelper(value),
+          _step3;
 
       try {
-        for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
-          el = _step2.value;
+        for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
+          el = _step3.value;
           el.textContent = 0;
         }
       } catch (err) {
-        _iterator2.e(err);
+        _iterator3.e(err);
       } finally {
-        _iterator2.f();
+        _iterator3.f();
       }
 
       decDisabled();
-  }
-});
+      inputGuests.value = "\u0421\u043A\u043E\u043B\u044C\u043A\u043E \u0433\u043E\u0441\u0442\u0435\u0439";
+      clear.style.visibility = 'hidden';
+    }
+
+    if (e.target === apply) {
+      var sumItems = +value[0].textContent + +value[1].textContent;
+      inputGuests.value = "".concat(sumItems, " ").concat(numWord(sumItems, ['гость', 'гостя', 'гостей'])) + (+value[2].textContent > 0 ? ", ".concat(+value[2].textContent, " ").concat(numWord(+value[2].textContent, ['младенец', 'младенца', 'младенцев'])) : '');
+    }
+  });
+}
 },{}],"../index.js":[function(require,module,exports) {
 "use strict";
 
@@ -373,7 +435,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50427" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50833" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -29,11 +29,11 @@ mixin text-field__expander (options)
           .text-field__expander-selector-btn.text-field__expander-selector-btn_inc +
     case dropdown 
       when 'guests'
-        .text-field__expander-controllers
+        .text-field__expander-controllers(id= 'controllers')
           +btn({
             type: 'without-border',
             title: 'очистить',
-            id: 'cancel'
+            id: 'clear'
           }
           )
           +btn({
